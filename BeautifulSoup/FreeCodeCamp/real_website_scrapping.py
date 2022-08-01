@@ -10,6 +10,18 @@ content = html_file.content
 soup = BeautifulSoup(content, 'lxml')
 # print(soup.prettify())  #prettier output 
 
-total_result_count = soup.find('span', id = "totolResultCountsId")
-job_card_list = soup.find_all("li", class_ = "clearfix job-bx wht-shd-bx")
-print(job_card_list[0].text)
+total_result_count = soup.find('span', id = "totolResultCountsId").text
+
+job_card_list = soup.find("li", class_ = "clearfix job-bx wht-shd-bx")
+
+
+company_name = job_card_list.find("h3", class_ = "joblist-comp-name").text
+key_skills = job_card_list.find("span", class_="srp-skills").text.replace(' ', '')
+published = job_card_list.find("span", class_= "sim-posted").span.text
+
+print(company_name)
+print(key_skills)
+print(published)
+job_description = ""
+experience_needed = ""
+job_location = ""
