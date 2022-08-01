@@ -22,11 +22,22 @@ with open('/home/emdad439/Developing/Django Journey/Learning Web Scraping/Beauti
     #     print(f"meta_tag = {meta_tag}  ...||...   meta_tag_text = {meta_tag.text}")
 
     
-    ## getting course details from 'example_website'
-    course_card_content = soup.find('div', class_ = 'card')
+    ## getting SINGLE course details from 'example_website'
+    # course_card_content = soup.find('div', class_ = 'card')
 
-    course_name = course_card_content.find('h5')
-    course_details = course_card_content.find('p')
-    course_price = course_card_content.find('a')
+    # course_name = course_card_content.find('h5')
+    # course_details = course_card_content.find('p')
+    # course_price = course_card_content.find('a')
+
+    # print(f"Name: {course_name.text}\nDetails: {course_details.text}\nPrice: {course_price.text}")
+
+    ## getting ALL course details from 'example_website'
+    course_card_list = soup.find_all('div', class_ = 'card-body')
     
-    print(f"Name: {course_name.text}\nDetails: {course_details.text}\nPrice: {course_price.text}")
+    for course_card in course_card_list:
+        course_name = course_card.find('h5').text
+        description = course_card.find('p').text
+        price_related_sentence = list(course_card.find('a').text.split())
+        price = price_related_sentence[-1] 
+
+        print(f"Course Name: {course_name}\nDescription: {description}\nPrice: {price}")
