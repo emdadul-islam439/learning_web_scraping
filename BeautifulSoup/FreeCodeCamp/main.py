@@ -6,8 +6,19 @@ with open('/home/emdad439/Developing/Django Journey/Learning Web Scraping/Beauti
 
     soup = BeautifulSoup(page_content, 'lxml')
     # print(soup.prettify())
-    tags = soup.find_all('h5')
 
+
+    ## working with 'tag' contents
+    tags = soup.find_all('h5')
     for tag in tags:
         print(f"tag = {tag}  ||  tag_text = {tag.text}")
+    
+
+    ## working with 'head' contents
+    head_content = soup.find('head')
+    meta_tag_list = head_content.find_all('meta')
+    print(meta_tag_list)
+    for meta_tag in meta_tag_list:
+        print(f"meta_tag = {meta_tag}  ...||...   meta_tag_text = {meta_tag.text}")
+
     
