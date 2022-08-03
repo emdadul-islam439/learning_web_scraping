@@ -1,0 +1,27 @@
+1) inside the "ScrapyLearning/quotetutorial/quotetutorial/spiders" or in one word- "spiders" folder-> 
+    i) create a python file. [i've created it as 'quotes_spider.py']
+    ii) import the scrapy [i've written 'import scrapy']
+    iii) create a class [i've created the class as 'class QuoteTutorial(scrapy.spiders):']
+        * create a variable 'name' [i've created it as 'name="quotes" ']
+        * create a list named 'start_urls' [i've created it as "start_urls = ["https://quotes.toscrape.com/"]"]
+        * create a function named 'parse(..., ....)' [i've created it as "def parse(self, response):"]
+            -a 'yield' section is needed [i've written is as "yield {'titletext' : title}"]
+
+2) for running the 'quotetutorial' file
+    i) in the terminal write "scrapy crawl <name-of-the-spider/crawler>" [i've written "scrapy crawl quotes"]
+    ii) many many lines of output will be shown inside the terminal. But, in the middle there will be some lines containing the output 
+        I've found it very hard to find the outputs in the middle of so many lines.
+
+3) Scrapping can be done into the SCRAPY SHELL
+    i) write "scrapy shell '<url-of-the-link-you-want-to-scrap>'" in the terminal [i've written-> scrapy shell "https://quotes.toscrape.come/"]
+    ii) After some lines i've seen a line containing ">>>". You can get output by written something in this line. 
+        * i've written-> response.css('title::text').extract()]
+        - the output was -> ['Quotes to Scrape']
+        * for the command -> response.css('title').extract()
+        - the out put was-> ['<title>Quotes to Scrape</title>']
+        * for the command -> response.css('title')
+        - the out put was-> [<Selector xpath='descendant-or-self::title' data='<title>Quotes to Scrape</title>'>]
+        * i've written-> response.css('title::text')[0].extract() [exactly as "response.css('title::text')[0].extract_first()"]
+        - the output was -> 'Quotes to Scrape'
+
+    iii) 

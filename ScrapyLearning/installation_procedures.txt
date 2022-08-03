@@ -1,0 +1,10 @@
+For using Scrapy-> 
+i) Create a Virtual Environment
+    - pip install pipenv
+    - Create a virtual environment: virtualenv . [I've created with this-> "python3 -m venv ./virtualEnv1" command]
+    - Activate the virtual environment: 
+    -> Windows: .\Scripts\Activate
+    -> Linux/Mac: ./bin/activate [I've activated this by-> "source virtualeEnv1/bin/activate" command]
+
+ii) Install Scrapy - pip install scrapy [I've installed it inside the first 'quotetutorial' folder]
+iii) scrapy startproject project_name
