@@ -11,7 +11,31 @@ class QuoteSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        # self.start_scraping(response = response)
+        self.start_scraping(response)
+        # item = QuotetutorialItem()
+        # all_quote_card = response.css("div.quote")
+
+        # for quote_info in all_quote_card:
+        #     title = quote_info.css("span.text::text").get()
+        #     author = quote_info.css("small.author::text").get()
+        #     tags = quote_info.css("a.tag::text").getall()
+
+        #     item['title'] = title
+        #     item['author'] = author
+        #     item['tags'] = tags
+        
+        #     yield item
+        
+        # token = response.css("input::attr(value)").get()
+        # print(f"CSRF TOKEN = {token}............................")
+        # FormRequest.from_response(response, formdata={
+        #     'csrf_token' : token,
+        #     'username' : "emdad",
+        #     'password' : "hello"
+        # }, callback = self.start_scraping)
+
+    
+    def start_scraping(self, response):
         item = QuotetutorialItem()
         all_quote_card = response.css("div.quote")
 
@@ -25,30 +49,6 @@ class QuoteSpider(scrapy.Spider):
             item['tags'] = tags
         
             yield item
-        
-        # token = response.css("input::attr(value)").get()
-        # print(f"CSRF TOKEN = {token}............................")
-        # FormRequest.from_response(response, formdata={
-        #     'csrf_token' : token,
-        #     'username' : "emdad",
-        #     'password' : "hello"
-        # }, callback = self.start_scraping)
-
-    
-    # def start_scraping(self, response):
-    #     item = QuotetutorialItem()
-    #     all_quote_card = response.css("div.quote")
-
-    #     for quote_info in all_quote_card:
-    #         title = quote_info.css("span.text::text").get()
-    #         author = quote_info.css("small.author::text").get()
-    #         tags = quote_info.css("a.tag::text").getall()
-
-    #         item['title'] = title
-    #         item['author'] = author
-    #         item['tags'] = tags
-        
-    #         yield item
 
 
     # def start_scraping(self, response):
