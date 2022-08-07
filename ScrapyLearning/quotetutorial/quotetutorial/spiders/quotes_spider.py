@@ -4,8 +4,9 @@ from ..items import QuotetutorialItem
 
 class QuoteSpider(scrapy.Spider):
     name = "quotes"
+    next_page_number = 2
     start_urls = [
-        "https://quotes.toscrape.com/"
+        "https://quotes.toscrape.com/page/1/"
     ]
 
     def parse(self, response):
@@ -23,6 +24,7 @@ class QuoteSpider(scrapy.Spider):
         
             yield item
 
-            next_page = response.css("li.next a::attr(href)").get()
-            if next_page is not None:
+            next_page = f"https://quotes.toscrape.com/page/{QuoteSpider.next_page_number}/"
+            if QuoteSpider.next_page_number < 11:
+                QuoteSpider.next_page_number += 1
                 yield response.follow(next_page, callback = self.parse)
