@@ -7,5 +7,6 @@ class QuoteSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        title = response.css('title::text').extract()
-        yield {'titletext' : title}
+        quote_card = response.xpath("//div[@class='quote']")
+        # title = quote_card.
+        yield {'quote_card' : quote_card}
