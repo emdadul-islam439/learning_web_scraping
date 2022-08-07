@@ -31,7 +31,15 @@
     * setting up the "pipeline"
         - in the settings.py file, un-comment the "ITEM_PIPELINES" variable, and the pipeline will be activated
         - in the pipeline.py file, you can print different variable's value. in this case-> print(item['title'][0]) inside the "process_item" function
-        - if executed successfully, you can see the printed value in the terminal
+        - if executed successfully, you can see the printed value in the terminal   
 
 ## Tutorial: 15->
-    * 
+    * shown how to create a SqLite table and how to manually insert values into it 
+        - create a temporary file "database.py"
+        - import sqlite3 
+        - create some variables:
+            -> connect = sqlite3.connect('<db-name>.db'),
+            -> cursor = connect.cursor()
+            -> cursor.execute("""create table quotes_table(, , ,)""")
+            -> connect.commit()
+            -> connect.close()
