@@ -14,7 +14,7 @@ class QuoteSpider(scrapy.Spider):
         print("in the PARSE() function................||||||||||||||||||||||||||...................")
         token = response.css("input::attr(value)").get()
         print(f"CSRF TOKEN = {token}...............|||||||||||||||||||||||||||.............")
-        FormRequest.from_response(response, formdata={
+        yield FormRequest.from_response(response, formdata={
             "csrf_token" : token,
             "username" : "emdad",
             "password" : "hello"
