@@ -22,3 +22,16 @@
         - create a variable. generaly it's called 'item'. in this case "item = QuoteTutorialItem()"
         - assign the respective values to the variables. in this case-> "item.title = title"
         - "yield" the item. in this case "yield item"
+
+## Tutorial: 13-> 
+    * save scraped info into xml/json/csv file
+        - in this case-> in the command line, use the command 'scrapy crawl quotes -o items.xml', an xml file will be generated automatically
+
+## Tutorial: 14->
+    * setting up the "pipeline"
+        - in the settings.py file, un-comment the "ITEM_PIPELINES" variable, and the pipeline will be activated
+        - in the pipeline.py file, you can print different variable's value. in this case-> print(item['title'][0]) inside the "process_item" function
+        - if executed successfully, you can see the printed value in the terminal
+
+## Tutorial: 15->
+    * 

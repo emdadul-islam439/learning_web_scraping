@@ -1,10 +1,6 @@
-# Define here the models for your scraped items
-#
-# See documentation in:
-# https://docs.scrapy.org/en/latest/topics/items.html
+# scraped data -> item container -> Json/Csv file
 
 import scrapy
-
 
 class QuotetutorialItem(scrapy.Item):
     title = scrapy.Field()
