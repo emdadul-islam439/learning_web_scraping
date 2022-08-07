@@ -43,3 +43,11 @@
             -> cursor.execute("""create table quotes_table(, , ,)""")
             -> connect.commit()
             -> connect.close()
+
+## Tutorial: 16->
+    * creating 3 functions-> "create_connection", "create_database" and "store_db"
+    * calling 3 function from "__init__" and "process_item" function
+    * crawl the spider and see if successfully storing items into db
+
+## Tutorial: 17->
+    * 
