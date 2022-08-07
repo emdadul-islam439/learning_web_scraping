@@ -49,5 +49,8 @@
     * calling 3 function from "__init__" and "process_item" function
     * crawl the spider and see if successfully storing items into db
 
-## Tutorial: 17->
-    * 
+## SKIPPED: Tutorial: 17->
+    * adding crawled data into MySQL
+
+## SKIPPED: Tutorial: 18->
+    * adding crawled data into MongoDB
