@@ -11,7 +11,8 @@ class QuoteSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        self.start_scraping(response)
+        print("in the PARSE() function...................................")
+        return self.start_scraping(response)
         # item = QuotetutorialItem()
         # all_quote_card = response.css("div.quote")
 
@@ -36,6 +37,7 @@ class QuoteSpider(scrapy.Spider):
 
     
     def start_scraping(self, response):
+        print("in the start_scraping() function...................................")
         item = QuotetutorialItem()
         all_quote_card = response.css("div.quote")
 
