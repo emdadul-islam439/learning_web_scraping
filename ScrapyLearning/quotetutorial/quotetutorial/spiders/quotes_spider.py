@@ -7,20 +7,18 @@ class QuoteSpider(scrapy.Spider):
     next_page_number = 2
     start_urls = [
         "http://quotes.toscrape.com/login"
-        # "http://quotes.toscrape.com/"
     ]
 
     def parse(self, response):
-        print("in the PARSE() function................||||||||||||||||||||||||||...................")
         token = response.css("input::attr(value)").get()
-        print(f"CSRF TOKEN = {token}...............|||||||||||||||||||||||||||.............")
+        
         yield FormRequest.from_response(response, formdata={
             "csrf_token" : token,
             "username" : "emdad",
             "password" : "hello"
         }, callback = self.start_scraping)
 
-        
+
     def start_scraping(self, response):
         item = QuotetutorialItem()
         all_quote_card = response.css("div.quote")
