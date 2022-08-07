@@ -1,3 +1,4 @@
+from gc import callbacks
 import scrapy
 from ..items import QuotetutorialItem
 
@@ -21,3 +22,7 @@ class QuoteSpider(scrapy.Spider):
             item['tags'] = tags
         
             yield item
+
+            next_page = response.css("li.next a::attr(href)").get()
+            if next_page is not None:
+                yield response.follow(next_page, callback = self.parse)

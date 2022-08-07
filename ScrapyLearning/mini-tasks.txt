@@ -54,3 +54,9 @@
 
 ## SKIPPED: Tutorial: 18->
     * adding crawled data into MongoDB
+
+## Tutorial: 19-> 
+    * get basic Paginated content
+        - get the 'next_page' url   
+        - as long as the 'next_page' url is not None:
+            ->call: yield response.follow(next_page, callback = self.parse) function 
