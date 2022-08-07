@@ -1,0 +1,16 @@
+## Tutorial: 9->
+    * get Title of the QuoteTutorial page with CSS (Done)
+    * get all the Quotes from the QuoteTutorial page (Done)
+    * get individual quotes by their index (Done)
+    * get class-name with SelectorGadget and get all the elements related to the class name (Done)
+
+## Tutorial: 10-> 
+    * get Title of the QuoteTutorial page with XPATH (Done)
+    * get all the Quotes from the QuoteTutorial page (Done)
+    * get individual quotes by their index (Done)
+    * get class-name with SelectorGadget and get all the elements related to the class name (Done)
+    * get 'href' value (link) text [from 'go to next' button] by CSS and XPATH combination (Done)
+
+## Tutorial: 11-> 
+    * get all the 'tag' related 'href' link-texts (almost Done)
+    * get all "quotes", "authors", and "tags" at the "quote_tutorial.py" file
