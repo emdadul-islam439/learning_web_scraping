@@ -5,15 +5,15 @@ from itemadapter import ItemAdapter
 
 class QuotetutorialPipeline:
     def __init__(self) -> None:
-        self.create_connection
-        self.create_db
+        self.create_connection()
+        self.create_db()
 
     def create_connection(self) -> None:
         self.connection = sqlite3.connect("myquote.db")
         self.cursor = self.connection.cursor()
 
     def create_db(self) -> None:
-        self.cursor.execute("""DROP TABLE IF EXIST quotes_table""")
+        self.cursor.execute("""DROP TABLE IF EXISTS quotes_table""")
         self.cursor.execute("""create table quotes_table(
             title text,
             author text,
