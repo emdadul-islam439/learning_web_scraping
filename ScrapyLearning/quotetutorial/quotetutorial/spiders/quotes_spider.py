@@ -16,8 +16,8 @@ class QuoteSpider(scrapy.Spider):
             author = quote_info.css("small.author::text").get()
             tags = quote_info.css("a.tag::text").getall()
 
-            item.title = title
-            item.author = author
-            item.tags = tags
+            item['title'] = title
+            item['author'] = author
+            item['tags'] = tags
         
             yield item
